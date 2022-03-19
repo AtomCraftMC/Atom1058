@@ -93,10 +93,13 @@ public class Misc {
 
     @SuppressWarnings("UnstableApiUsage")
     private static void forceKick(Player p, @Nullable IArena arena, boolean notAbandon) {
-        ByteArrayDataOutput out = ByteStreams.newDataOutput();
-        out.writeUTF("Connect");
-        out.writeUTF(config.getYml().getString("lobbyServer"));
-        p.sendPluginMessage(plugin, "BungeeCord", out.toByteArray());
+//        ByteArrayDataOutput out = ByteStreams.newDataOutput();
+//        out.writeUTF("Connect");
+//        out.writeUTF(config.getYml().getString("lobbyServer"));
+//        p.sendPluginMessage(plugin, "BungeeCord", out.toByteArray());
+
+        plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), "forward " + p.getName() + " bedwars");
+
         if (arena != null && !notAbandon && arena.getStatus() == GameState.playing) {
             if (config.getBoolean(ConfigPath.GENERAL_CONFIGURATION_MARK_LEAVE_AS_ABANDON)) {
                 arena.abandonGame(p);
