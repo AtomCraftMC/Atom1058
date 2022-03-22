@@ -50,7 +50,8 @@ public class MainConfig extends ConfigManager {
         yml.addDefault("language", "en");
         yml.addDefault(ConfigPath.GENERAL_CONFIGURATION_DISABLED_LANGUAGES, Collections.singletonList("your language iso here"));
         yml.addDefault("storeLink", "https://www.spigotmc.org/resources/authors/39904/");
-        yml.addDefault("lobbyServer", "hub");
+        yml.addDefault("serverOnLeave", "hub");
+        yml.addDefault("commandOnLeave", "spawn %player%");
         yml.addDefault(ConfigPath.GENERAL_CHAT_GLOBAL, yml.get("globalChat", false));
         yml.addDefault(ConfigPath.GENERAL_CHAT_FORMATTING, yml.get("formatChat", true));
         yml.addDefault("debug", false);
